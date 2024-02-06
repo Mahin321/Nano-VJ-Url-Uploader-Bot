@@ -1,116 +1,133 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 class Translation(object):
 
-    TECH_VJ_START_TEXT = """
-<b>ʜᴇʟʟᴏ {} 👋
+    START_TEXT = """
+🤗 Hello {}
 
-ɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀғᴜʟ ᴀᴅᴠᴀɴᴄᴇ ᴜʀʟ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ
+I Am Telegram URL Uploader Bot.
 
-ɢɪᴠᴇ ᴍᴇ ᴀɴʏ ʟɪɴᴋ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪɴᴛᴏ ғɪʟᴇ ᴏʀ ᴠɪᴅᴇᴏ ᴡɪᴛʜ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ sᴜᴘᴘᴏʀᴛ
+**__Send me a direct link and I will upload it to telegram as a file/video.__**
 
-ᴛʜɪs ʙᴏᴛ ɪs ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href="https://t.me/kingvj01">ᴛᴇᴄʜ ᴠᴊ</a></b>
+**Use Help Button To Know How To Use Me**
 """
+    HELP_TEXT = """
+𒊹︎︎︎ How To Upload File Or Media 
 
-    TECH_VJ_HELP_TEXT = """
-<b>🖍️ ғᴇᴀᴛᴜʀᴇs :-
+➪ Send Your Link For Upload File Or Media.
 
-🔺 ᴜᴘʟᴏᴀᴅ <a href="https://t.me/VJCode/4">ʏᴛ-ᴅʟᴘ sᴜᴘᴘᴏʀᴛᴇᴅ ʟɪɴᴋs</a> ᴛᴏ ᴛᴇʟᴇɢʀᴀᴍ.
+𒊹︎︎︎ How to set thumbnail
 
-🔺 ᴜᴘʟᴏᴀᴅ ʜᴛᴛᴘ/ʜᴛᴛᴘs ᴀs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴍ.
+➪ Send Your Thumbnail Photo And Permanent Added Your Photo.
 
-🔺 ᴜᴘʟᴏᴀᴅ ᴢᴇᴇ5, sᴏɴʏ.ʟɪᴠᴇ, ᴠᴏᴏᴛ ᴀɴᴅ ᴍᴜᴄʜ ᴍᴏʀᴇ.
+𒊹︎︎︎ How To Deleting Thumbnail
 
-🔺 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴛʜᴜᴍʙɴᴀɪʟ Sᴜᴘᴘᴏʀᴛ.
+➪ Send /delthumb To Delete Your Thumbnail.
 
-🔺 ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ ʙʏ /broadcast ᴄᴏᴍᴍᴀɴᴅ
+𒊹︎︎︎ How To Show Thumbnail 
 
-💢 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ :-
-
-🔻 ʜᴏᴡ ᴛᴏ ᴜᴘʟᴏᴀᴅ ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋs <a href="https://t.me/VJCode/11">ᴛᴜᴛᴏʀɪᴀʟ ᴠɪᴅᴇᴏ</a>
-
-🔻 sᴇɴᴅ ᴍᴇ ᴛʜᴇ ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ | ʏᴛᴅʟ | ᴅɪʀᴇᴄᴛ ʟɪɴᴋs.
-
-🔻sᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇsɪʀᴇᴅ ᴏᴘᴛɪᴏɴ.
-
-🔻 ᴛʜᴇɴ ʙᴇ ʀᴇʟᴀxᴇᴅ ʏᴏᴜʀ ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴜᴘʟᴏᴀᴅᴇᴅ sᴏᴏɴ..</b> 
+➪ Send /showthumb To View Custom Thumbnail 
+ 
 """
+    ABOUT_TEXT = """
+**📛 My Name** : [Uploader Bot V3 🚀](http://t.me/UploadFlieBot)
 
-    TECH_VJ_ABOUT_TEXT = """
-<b>♻️ ᴍʏ ɴᴀᴍᴇ : ᴜʀʟ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ
+**❤️ Version** : [2.3 🔥](http://t.me/UploadFlieBot)
 
-🌀 ᴄʜᴀɴɴᴇʟ : <a href="https://t.me/vj_botz">ᴠᴊ ʙᴏᴛᴢ</a>
+**🤖 Source** : [Click](https://github.com/LISA-KOREA/UPLOADER-BOT-V3)
 
-🌺 ʜᴇʀᴏᴋᴜ : <a href="https://heroku.com/">ʜᴇʀᴏᴋᴜ</a>
+**🧿 Language** : [Python 3.10.11](https://www.python.org/)
 
-📑 ʟᴀɴɢᴜᴀɢᴇ : <a href="https://www.python.org/">ᴘʏᴛʜᴏɴ 3.10.5</a>
+**📢 Framework** : [Pyrogram 1.4.16](https://docs.pyrogram.org/)
 
-🇵🇲 ғʀᴀᴍᴇᴡᴏʀᴋ : <a href="https://docs.pyrogram.org/">ᴘʏʀᴏɢʀᴀᴍ 2.0.30</a>
-
-👲 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href="https://t.me/kingvj01">ᴛᴇᴄʜ ᴠᴊ</a></b>
+**👨‍💻 Developer** : [LISA](https://t.me/LISA_FAN_LK)
 
 """
 
-    
-    TECH_VJ_START_BUTTONS = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-        ], [
-            InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-            InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
-        ], [
-            InlineKeyboardButton('❓ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('🦊 ᴀʙᴏᴜᴛ', callback_data='about')
-        ], [
-            InlineKeyboardButton('🇮🇳 ғᴏʟʟᴏᴡ ᴍᴇ ᴏɴ ɪɴsᴛᴀɢʀᴀᴍ 💖', url='https://instagram.com/tech.vj')
-        ]]
-    )
-    TECH_VJ_HELP_BUTTONS = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-        ], [
-            InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-            InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
-        ], [
-            InlineKeyboardButton('🏠 ʜᴏᴍᴇ', callback_data='home'),
-            InlineKeyboardButton('🦊 ᴀʙᴏᴜᴛ', callback_data='about')
-        ], [
-            InlineKeyboardButton('📛 ᴄʟᴏsᴇ', callback_data='close')
-        ]]
-    )
-    TECH_VJ_ABOUT_BUTTONS = InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-        ], [
-            InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-            InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
-        ], [
-            InlineKeyboardButton('🏠 ʜᴏᴍᴇ', callback_data='home'),
-            InlineKeyboardButton('❓ ʜᴇʟᴘ', callback_data='help')
-        ], [
-            InlineKeyboardButton('📛 ᴄʟᴏsᴇ', callback_data='close')
-        ]]
-    )
-    
-    TECH_VJ_ERROR = "<b>ᴇʀʀᴏʀ : {}</b>"
 
-    
-    TECH_VJ_FORMAT_SELECTION = "<b>ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ғᴏʀᴍᴀᴛ: ғɪʟᴇ ꜱɪᴢᴇ ᴍɪɢʜᴛ ʙᴇ ᴀᴘᴘʀᴏxɪᴍᴀᴛᴇ \nɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ, ꜱᴇɴᴅ ᴘʜᴏᴛᴏ ʙᴇғᴏʀᴇ ᴏʀ ǫᴜɪᴄᴋʟʏ ᴀғᴛᴇʀ ᴛᴀᴘᴘɪɴɢ ᴏɴ ᴀɴʏ ᴏғ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴꜱ.\nʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ /delthumbnail ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴀᴜᴛᴏ-ɢᴇɴᴇʀᴀᴛᴇᴅ ᴛʜᴜᴍʙɴᴀɪʟ.</b>"
-    TECH_VJ_SET_CUSTOM_USERNAME_PASSWORD = """<b>Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴘʀᴇᴍɪᴜᴍ ᴠɪᴅᴇᴏꜱ, ᴘʀᴏᴠɪᴅᴇ ɪɴ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ғᴏʀᴍᴀᴛ:\nURL | ғɪʟᴇɴᴀᴍᴇ | ᴜꜱᴇʀɴᴀᴍᴇ | ᴘᴀꜱꜱᴡᴏʀᴅ</b>"""
-    TECH_VJ_DOWNLOAD_START = "<b>📥 ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...</b>"
-    TECH_VJ_UPLOAD_START = "<b>📤 ᴜᴘʟᴏᴀᴅɪɴɢ...</b>"
-    TECH_VJ_RCHD_TG_API_LIMIT = "<b>ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ɪɴ {} ꜱᴇᴄᴏɴᴅꜱ.\nᴅᴇᴛᴇᴄᴛᴇᴅ ғɪʟᴇ ꜱɪᴢᴇ: {}\nꜱᴏʀʀʏ. ʙᴜᴛ, ɪ ᴄᴀɴɴᴏᴛ ᴜᴘʟᴏᴀᴅ ғɪʟᴇꜱ ɢʀᴇᴀᴛᴇʀ ᴛʜᴀɴ 𝟸GB ᴅᴜᴇ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴍ API ʟɪᴍɪᴛᴀᴛɪᴏɴꜱ.</b>"
-    TECH_VJ_AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>ᴛʜᴀɴᴋꜱ ғᴏʀ ᴜꜱɪɴɢ ᴍᴇ\n\nJᴏɪɴ : @VJ_BOTZ</b>"
-    TECH_VJ_AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "<b>ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ɪɴ {} ꜱᴇᴄᴏɴᴅꜱ.\nUᴘʟᴏᴀᴅᴇᴅ ɪɴ {} ꜱᴇᴄᴏɴᴅꜱ.\n\n@VJ_BOTZ</b>"
-    TECH_VJ_SAVED_CUSTOM_THUMB_NAIL = "<b>ᴄᴜꜱᴛᴏᴍ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛʜᴜᴍʙɴᴀɪʟ ꜱᴀᴠᴇᴅ. Tʜɪꜱ ɪᴍᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴜꜱᴇᴅ ɪɴ ᴛʜᴇ ᴠɪᴅᴇᴏ / ғɪʟᴇ.</b>"
-    TECH_VJ_DEL_ETED_CUSTOM_THUMB_NAIL = "<b>✅ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ᴄʟᴇᴀʀᴇᴅ ꜱᴜᴄᴄᴇꜱғᴜʟʟʏ.</b>"
-    TECH_VJ_CUSTOM_CAPTION_UL_FILE = "<b>{}</b>"
-    TECH_VJ_NO_VOID_FORMAT_FOUND = "<b>ᴇʀʀᴏʀ...\nTᴇᴄʜ VJ ꜱᴀɪᴅ: {}</b>"
-    TECH_VJ_REPLY_TO_MEDIA_ALBUM_TO_GEN_THUMB = "<b>ʀᴇᴘʟʏ /generatecustomthumbnail ᴛᴏ ᴀ ᴍᴇᴅɪᴀ ᴀʟʙᴜᴍ, ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙᴀɪʟ</b>"
-    TECH_VJ_ERR_ONLY_TWO_MEDIA_IN_ALBUM = """<b>ᴍᴇᴅɪᴀ ᴀʟʙᴜᴍ ꜱʜᴏᴜʟᴅ ᴄᴏɴᴛᴀɪɴ ᴏɴʟʏ ᴛᴡᴏ ᴘʜᴏᴛᴏꜱ. ᴘʟᴇᴀꜱᴇ ʀᴇ-ꜱᴇɴᴅ ᴛʜᴇ ᴍᴇᴅɪᴀ ᴀʟʙᴜᴍ, ᴀɴᴅ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ, ᴏʀ ꜱᴇɴᴅ ᴏɴʟʏ ᴛᴡᴏ ᴘʜᴏᴛᴏꜱ ɪɴ ᴀɴ ᴀʟʙᴜᴍ.\nʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ /ʀᴇɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅ ᴀғᴛᴇʀ ʀᴇᴄᴇɪᴠɪɴɢ ғɪʟᴇ ᴛᴏ ʀᴇɴᴀᴍᴇ ɪᴛ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ꜱᴜᴘᴘᴏʀᴛ.</b>"""
-    TECH_VJ_CANCEL_STR = "<b>ᴘʀᴏᴄᴇꜱꜱ ᴄᴀɴᴄᴇʟʟᴇᴅ</b>"
-    TECH_VJ_ZIP_UPLOADED_STR = "<b>ᴜᴘʟᴏᴀᴅᴇᴅ {} ғɪʟᴇꜱ ɪɴ {} ꜱᴇᴄᴏɴᴅꜱ</b>"
-    TECH_VJ_SLOW_URL_DECED = "<b>Gᴏꜱʜ ᴛʜᴀᴛ ꜱᴇᴇᴍꜱ ᴛᴏ ʙᴇ ᴀ ᴠᴇʀʏ ꜱʟᴏᴡ URL. Sɪɴᴄᴇ ʏᴏᴜ ᴡᴇʀᴇ ꜱᴄʀᴇᴡɪɴɢ ᴍʏ ʜᴏᴍᴇ, I ᴀᴍ ɪɴ ɴᴏ ᴍᴏᴏᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜɪꜱ ғɪʟᴇ. ᴍᴇ ᴀ ғᴀꜱᴛ URL ꜱᴏ ᴛʜᴀᴛ I ᴄᴀɴ ᴜᴘʟᴏᴀᴅ ᴛᴏ Tᴇʟᴇɢʀᴀᴍ, ᴡɪᴛʜᴏᴜᴛ ᴍᴇ ꜱʟᴏᴡɪɴɢ ᴅᴏᴡɴ ғᴏʀ ᴏᴛʜᴇʀ ᴜꜱᴇʀꜱ.</b>"
+    PROGRESS = """
+🚀 Sᴘᴇᴇᴅ : {3}/s\n
+✅ Dᴏɴᴇ : {1}\n
+📁 Tᴏᴛᴀʟ Sɪᴢᴇ  : {2}\n
+🕔 Tɪᴍᴇ : {4}\n
+"""
 
-    TECH_VJ_ERROR_YTDLP = "<b>ᴘʟᴇᴀꜱᴇ ʀᴇᴘᴏʀᴛ ᴛʜɪꜱ ɪꜱꜱᴜᴇ ᴏɴ https://yt-dl.org/bug . ᴍᴀᴋᴇ ꜱᴜʀᴇ ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴛʜᴇ ʟᴀᴛᴇꜱᴛ ᴠᴇʀꜱɪᴏɴ; ꜱᴇᴇ  https://yt-dl.org/update ᴏɴ ʜᴏᴡ ᴛᴏ ᴜᴘᴅᴀᴛᴇ. ʙᴇ ꜱᴜʀᴇ ᴛᴏ ᴄᴀʟʟ ʏᴏᴜᴛᴜʙᴇ-ᴅʟ ᴡɪᴛʜ ᴛʜᴇ --ᴠᴇʀʙᴏꜱᴇ ғʟᴀɢ ᴀɴᴅ ɪɴᴄʟᴜᴅᴇ ɪᴛꜱ ᴄᴏᴍᴘʟᴇᴛᴇ ᴏᴜᴛᴘᴜᴛ.</b>"
+
+    START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Settings', callback_data='OpenSettings')
+        ],[
+        InlineKeyboardButton('Help', callback_data='help'),
+        InlineKeyboardButton('About', callback_data='about')
+        ],[
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+    HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Back', callback_data='home'),
+        InlineKeyboardButton('About', callback_data='about')
+        ],[
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+    ABOUT_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Back', callback_data='home'),
+        InlineKeyboardButton('Help', callback_data='help')
+        ],[
+        InlineKeyboardButton('🔒 Close', callback_data='close')
+        ]]
+    )
+    BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+    TEXT = "sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ᴛᴏ sᴇᴛ ɪᴛ"
+    IFLONG_FILE_NAME = " Only 64 characters can be named . "
+    RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
+    ABS_TEXT = " Please don't be selfish."
+    UPGRADE_TEXT = "<b>No preminum plans available in this bot </b>  /help for Details"
+    FORMAT_SELECTION = "<b>Select Your Format 👇\n\n🎥 Video = Upload As Streamble\n\n📂 File =Upload As File\n\n👮‍♂ Powered By :</b> @NT_BOT_CHANNEL"
+    SET_CUSTOM_USERNAME_PASSWORD = """"""
+    NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
+    DOWNLOAD_START = "📥 Downloading..."
+    UPLOAD_START = "📤 Uploading.."
+    RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
+    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 2GB due to Telegram API limitations."
+    AFTER_SUCCESSFUL_UPLOAD_MSG = " OWNER : Lisa 💕\nFor the List of Telegram Bots"
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Dᴏᴡɴʟᴏᴀᴅᴇᴅ ɪɴ {} sᴇᴄᴏɴᴅs.\n\nTʜᴀɴᴋs Fᴏʀ Usɪɴɢ Mᴇ\n\nUᴘʟᴏᴀᴅᴇᴅ ɪɴ {} sᴇᴄᴏɴᴅs"
+    NOT_AUTH_USER_TEXT = "Please /upgrade your subscription."
+    SAVED_CUSTOM_THUMB_NAIL = "Save Your Thumbnail ✔️"
+    DEL_ETED_CUSTOM_THUMB_NAIL = "Save Your Thumbnail ✔️."
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Delete Your Thumbnail 😏."
+    SAVED_RECVD_DOC_FILE = "Document Downloaded Successfully."
+    CUSTOM_CAPTION_UL_FILE = " "
+    NO_CUSTOM_THUMB_NAIL_FOUND = "No Thumbnail 😴"
+    NO_VOID_FORMAT_FOUND = "ERROR... <code>{}</code>"
+    FILE_NOT_FOUND = "Error, File not Found!!"
+    USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
+    SOMETHING_WRONG = "<code>Something Wrong. Try again.</code>"
+    REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
+    REPLY_TO_DOC_FOR_RENAME_FILE = "Reply to a Telegram media to /ren with custom thumbnail support"
+    FF_MPEG_RO_BOT_RE_SURRECT_ED = """Syntax: /trim HH:MM:SS for screenshot of that specific time."""
+    FF_MPEG_RO_BOT_STEP_TWO_TO_ONE = "First send /downloadmedia to any media so that it can be downloaded to my local. \nSend /storageinfo to know the media, that is currently downloaded."
+    FF_MPEG_RO_BOT_STOR_AGE_INFO = "Video Duration: {}\nSend /clearffmpegmedia to delete this media, from my storage.\nSend /trim HH:MM:SS [HH:MM:SS] to cu[l]t a small photo / video, from the above media."
+    FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS = "A saved media already exists. Please send /storageinfo to know the current media details."
+    USER_DELETED_FROM_DB = "User <a href='tg://user?id={}'>{}</a> deleted from DataBase."
+    REPLY_TO_DOC_OR_LINK_FOR_RARX_SRT = "Reply to a Telegram media (MKV), to extract embedded streams"
+    REPLY_TO_MEDIA_ALBUM_TO_GEN_THUMB = "Reply /generatecustomthumbnail to a media album, to generate custom thumbail"
+    ERR_ONLY_TWO_MEDIA_IN_ALBUM = "Media Album should contain only two photos. Please re-send the media album, and then try again, or send only two photos in an album."
+    INVALID_UPLOAD_BOT_URL_FORMAT = "URL format is incorrect. make sure your url starts with either http:// or https://. You can set custom file name using the format link | file_name.extension"
+    ABUSIVE_USERS = "You are not allowed to use this bot. If you think this is a mistake, please check /me to remove this restriction."
+    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "For the list of Telegram bots. "
+    EXTRACT_ZIP_INTRO_ONE = "Send a compressed file first, Then reply /unzip command to the file."
+    EXTRACT_ZIP_INTRO_THREE = "Analyzing received file. ⚠️ This might take some time. Please be patient. "
+    UNZIP_SUPPORTED_EXTENSIONS = ("zip", "rar")
+    ZIP_UPLOADED_STR = "Uploaded {} files in {} seconds"
+    FREE_USER_LIMIT_Q_SZE = """This Bot full free"""
+    SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
+    FORCE_SUBSCRIBE_TEXT = "<code>Sorry Dear You Must Join My Updates Channel for using me 😌😉....</code>"
+    BANNED_USER_TEXT = "<code>You are Banned!</code>"
+    CHECK_LINK = "⚡️"
