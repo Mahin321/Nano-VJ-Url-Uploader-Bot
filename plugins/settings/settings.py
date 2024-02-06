@@ -1,7 +1,7 @@
 
 import asyncio
 from pyrogram import types, errors
-from config.py import Config
+from config import Config
 from plugins.database.database import db
 
 async def OpenSettings(m: "types.Message"):
