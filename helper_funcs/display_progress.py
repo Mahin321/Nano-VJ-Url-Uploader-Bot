@@ -1,17 +1,17 @@
+# the logging things
 import logging
-import math
-import os
-import time
-
-from config import Config
-from translation import Translation
-
-# Setup logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Function to track upload/download progress for Pyrogram
+import math, os, time, shutil
+
+
+from config import Config
+# the Strings used for this "thing"
+from translation import Translation
+
+
 async def progress_for_pyrogram(
     current,
     total,
@@ -50,8 +50,9 @@ async def progress_for_pyrogram(
         except:
             pass
 
-
 def humanbytes(size):
+    # https://stackoverflow.com/a/49361727/4723940
+    # 2**10 = 1024
     if not size:
         return ""
     power = 2**10
@@ -74,19 +75,3 @@ def TimeFormatter(milliseconds: int) -> str:
         ((str(seconds) + "s, ") if seconds else "") + \
         ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
-
-# Main function
-def main():
-    # Example usage of the functions
-    start_time = time.time()
-    total_upload_size = 1024 * 1024 * 10  # 10 MB for upload
-    total_download_size = 1024 * 1024 * 20  # 20 MB for download
-    for current_upload_size, current_download_size in zip(range(0, total_upload_size, 1024), range(0, total_download_size, 1024)):
-        # Assuming "Uploading" as ud_type for upload progress
-        await progress_for_pyrogram(current_upload_size, total_upload_size, "Uploading", "ᴛʜᴀɴᴋꜱ ғᴏʀ ᴜꜱɪɴɢ ᴍᴇ", start_time)
-        # Assuming "Downloading" as ud_type for download progress
-        await progress_for_pyrogram(current_download_size, total_download_size, "Downloading", "ᴛʜᴀɴᴋꜱ ғᴏʀ ᴜꜱɪɴɢ ᴍᴇ", start_time)
-        time.sleep(0.1)
-
-if __name__ == "__main__":
-    main()
