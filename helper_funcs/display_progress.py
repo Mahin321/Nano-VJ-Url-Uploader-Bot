@@ -1,21 +1,17 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
-# the logging things
 import logging
+import math
+import os
+import time
+
+from config import Config
+from translation import Translation
+
+# Setup logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-import math, os, time, shutil
-
-
-from config import Config
-# the Strings used for this "thing"
-from translation import Translation
-
-
+# Function to track upload/download progress for Pyrogram
 async def progress_for_pyrogram(
     current,
     total,
@@ -26,7 +22,6 @@ async def progress_for_pyrogram(
     now = time.time()
     diff = now - start
     if round(diff % 10.00) == 0 or current == total:
-        # if round(current / total * 100, 0) % 5 == 0:
         percentage = current * 100 / total
         speed = current / diff
         elapsed_time = round(diff) * 1000
@@ -36,32 +31,27 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "[{0}{1}] \nP: {2}%\n".format(
-            ''.join(["█" for i in range(math.floor(percentage / 5))]),
-            ''.join(["░" for i in range(20 - math.floor(percentage / 5))]),
-            round(percentage, 2))
+        # Choose symbols for progress bar based on ud_type
+        filled_symbol = '■'
+        empty_symbol = '□'
 
-        tmp = progress + "{0} of {1}\nSpeed: {2}/s\nETA: {3}\n".format(
-            humanbytes(current),
-            humanbytes(total),
-            humanbytes(speed),
-            # elapsed_time if elapsed_time != '' else "0 s",
-            estimated_total_time if estimated_total_time != '' else "0 s"
-        )
+        # Calculate number of filled and empty symbols
+        filled_count = math.floor(percentage / 5)
+        empty_count = 20 - filled_count
+
+        # Construct progress bar
+        progress = f"[{filled_symbol * filled_count}{empty_symbol * empty_count}] \nP: {round(percentage, 2)}%\n"
+
+        tmp = progress + f"{humanbytes(current)} of {humanbytes(total)}\nSpeed: {humanbytes(speed)}/s\nETA: {estimated_total_time}\n"
         try:
             await message.edit(
-                text="{}\n {}".format(
-                    ud_type,
-                    tmp
-                )
+                text=f"{ud_type}\n {tmp}"
             )
         except:
             pass
 
 
 def humanbytes(size):
-    # https://stackoverflow.com/a/49361727/4723940
-    # 2**10 = 1024
     if not size:
         return ""
     power = 2**10
@@ -85,3 +75,18 @@ def TimeFormatter(milliseconds: int) -> str:
         ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
 
+# Main function
+def main():
+    # Example usage of the functions
+    start_time = time.time()
+    total_upload_size = 1024 * 1024 * 10  # 10 MB for upload
+    total_download_size = 1024 * 1024 * 20  # 20 MB for download
+    for current_upload_size, current_download_size in zip(range(0, total_upload_size, 1024), range(0, total_download_size, 1024)):
+        # Assuming "Uploading" as ud_type for upload progress
+        await progress_for_pyrogram(current_upload_size, total_upload_size, "Uploading", "ᴛʜᴀɴᴋꜱ ғᴏʀ ᴜꜱɪɴɢ ᴍᴇ", start_time)
+        # Assuming "Downloading" as ud_type for download progress
+        await progress_for_pyrogram(current_download_size, total_download_size, "Downloading", "ᴛʜᴀɴᴋꜱ ғᴏʀ ᴜꜱɪɴɢ ᴍᴇ", start_time)
+        time.sleep(0.1)
+
+if __name__ == "__main__":
+    main()
