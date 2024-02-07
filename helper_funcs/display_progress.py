@@ -11,13 +11,13 @@ from config import Config
 # the Strings used for this "thing"
 from translation import Translation
 
-
 async def progress_for_pyrogram(
     current,
     total,
     ud_type,
     message,
-    start
+    start,
+    direction="upload"  # Added parameter for progress direction
 ):
     now = time.time()
     diff = now - start
@@ -31,9 +31,13 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        # Choose symbols for progress bar based on ud_type
-        filled_symbol = '■'
-        empty_symbol = '□'
+        # Choose symbols for progress bar based on direction
+        if direction == "upload":
+            filled_symbol = '●'
+            empty_symbol = '○'
+        elif direction == "download":
+            filled_symbol = '●'
+            empty_symbol = '○'
 
         # Calculate number of filled and empty symbols
         filled_count = math.floor(percentage / 5)
@@ -46,9 +50,18 @@ async def progress_for_pyrogram(
         try:
             await message.edit(
                 text=f"{ud_type}\n {tmp}"
-            )
+           # For upload progress
+await progress_for_pyrogram(current, total, "Uploading", message, start, direction="upload")
+
+# For download progress
+await progress_for_pyrogram(current, total, "Downloading", message, start, direction="download")
+
+           )
         except:
             pass
+
+
+
 
 def humanbytes(size):
     # https://stackoverflow.com/a/49361727/4723940
