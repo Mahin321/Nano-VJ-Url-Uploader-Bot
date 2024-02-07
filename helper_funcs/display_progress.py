@@ -1,15 +1,13 @@
-# the logging things
 import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-
-import math, os, time, shutil
-
-
+import math
+import os
+import time
+import shutil
 from config import Config
-# the Strings used for this "thing"
 from translation import Translation
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 async def progress_for_pyrogram(
     current,
@@ -50,17 +48,9 @@ async def progress_for_pyrogram(
         try:
             await message.edit(
                 text=f"{ud_type}\n {tmp}"
-           # For upload progress
-await progress_for_pyrogram(current, total, "Uploading", message, start, direction="upload")
-
-# For download progress
-await progress_for_pyrogram(current, total, "Downloading", message, start, direction="download")
-
-           )
+            )
         except:
             pass
-
-
 
 
 def humanbytes(size):
